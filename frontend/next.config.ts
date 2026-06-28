@@ -3,7 +3,7 @@ import path from "path/win32";
 
 const nextConfig: NextConfig = {
   output: undefined,
-  outputFileTracingRoot: path.join(__dirname, "../"),
+  outputFileTracingRoot: process.cwd(),
   serverExternalPackages: ["@prisma/client"],
 };
 
