@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
+import path from "path/win32";
 
 const nextConfig: NextConfig = {
   output: undefined,
+  outputFileTracingRoot: path.join(__dirname, "../"),
   serverExternalPackages: ["@prisma/client"],
 };
 
