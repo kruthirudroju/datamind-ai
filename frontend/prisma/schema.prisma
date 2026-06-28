@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // or your database provider (mysql, sqlite, etc.)
+  url      = env("DATABASE_URL")
+}
+model Dataset {
+  id           String   @id @default(uuid())
+  userId       String   
+  filename     String
+  rowCount     Int
+  columnCount  Int
+  columnNames  String[]
+  previewRows  Json     
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([userId]) 
+}
